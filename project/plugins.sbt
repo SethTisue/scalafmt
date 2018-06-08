@@ -1,8 +1,3 @@
-resolvers ++= Seq(
-  Classpaths.sbtPluginReleases,
-  Resolver.bintrayIvyRepo("dancingrobot84", "sbt-plugins")
-)
-
 addSbtPlugin("org.foundweekends" % "sbt-bintray" % "0.5.1")
 addSbtPlugin("com.dwijnand" % "sbt-dynver" % "1.2.0")
 addSbtPlugin("com.eed3si9n" % "sbt-buildinfo" % "0.7.0")
@@ -15,7 +10,6 @@ addSbtPlugin("org.scala-js" % "sbt-scalajs" % "0.6.20")
 addSbtPlugin("com.lihaoyi" % "scalatex-sbt-plugin" % "0.3.9")
 addSbtPlugin("org.xerial.sbt" % "sbt-sonatype" % "2.0")
 addSbtPlugin("com.jsuereth" % "sbt-pgp" % "1.1.0")
-addSbtPlugin("com.dancingrobot84" % "sbt-idea-plugin" % "0.4.2")
 addSbtPlugin("com.typesafe.sbt" % "sbt-ghpages" % "0.6.2")
 addSbtPlugin("com.typesafe" % "sbt-mima-plugin" % "0.1.18")
 

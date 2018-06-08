@@ -32,7 +32,6 @@ name := "scalafmtRoot"
 allSettings
 noPublish
 commands ++= ciCommands
-addCommandAlias("downloadIdea", "intellij/updateIdea")
 
 lazy val core = crossProject
   .in(file("scalafmt-core"))
@@ -141,15 +140,10 @@ lazy val intellij = project
     noPublish,
     noDocs,
     mimaReportBinaryIssues := {},
-    ideaBuild := "2016.3.2",
     test := {}, // no need to download IDEA to run all tests.
-    ideaEdition := IdeaEdition.Community,
-    ideaDownloadDirectory in ThisBuild := baseDirectory.value / "idea",
-    libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.6",
-    cleanFiles += ideaDownloadDirectory.value
+    libraryDependencies += "org.scala-lang.modules" %% "scala-xml" % "1.0.6"
   )
   .dependsOn(coreJVM, cli)
-  .enablePlugins(SbtIdeaPlugin)
 
 lazy val tests = project
   .in(file("scalafmt-tests"))
